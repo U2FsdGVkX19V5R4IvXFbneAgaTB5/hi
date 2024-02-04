@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Question Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #question-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #answers-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .answer-button {
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #3498db; /* Blue border color */
+            background-color: #3498db; /* Blue background color */
+            color: #fff; /* White text color */
+        }
+
+        .answer-button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            border-color: #2980b9;
+        }
+
+        #result-container {
+            text-align: center;
+            display: none;
+        }
+
+        #result-text {
+            font-size: 18px;
+        }
+
+        .error-message {
+            font-size: 60px;
+            color: #e74c3c; /* Red color */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="question-container">
+        <h1>Will you be free on the 5th day of Lunar New Year?</h1>
+    </div>
+
+    <div id="answers-container">
+        <button class="answer-button" onclick="showResult('Yes')">Yes</button>
+        <button class="answer-button" onclick="showResult('No')">No</button>
+    </div>
+
+    <div id="result-container">
+        <h2 id="result-text"></h2>
+    </div>
+
+    <script>
+        function showResult(answer) {
+            if (answer === 'Yes') {
+                document.getElementById('result-text').innerHTML = '&#127800;&#127800;&#127800; &#128563;'; // Display three cherry blossoms and a shy emoji
+            } else {
+                document.getElementById('result-text').innerHTML = '<span class="error-message">Erreur</span>';
+            }
+            document.getElementById('result-container').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
